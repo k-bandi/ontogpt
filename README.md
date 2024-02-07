@@ -3,6 +3,27 @@
 [![DOI](https://zenodo.org/badge/13996/monarch-initiative/ontogpt.svg)](https://zenodo.org/badge/latestdoi/13996/monarch-initiative/ontogpt)
 ![PyPI](https://img.shields.io/pypi/v/ontogpt)
 
+## Instructions to use the forked version
+Git clone this repo to your local directory (LD). 
+
+Create a python venv using `pyenv virtualenv 3.11.7 <venv_name>`.
+Activate the venv using `pyenv activate <venv_name>`.
+
+Change directory to `ontogpt` (LD), and do `poetry install` (assuming you already have poetry 1.16.1 or greater installed)
+This will setup all the necessary packages required.
+ 
+Set the Azure OpenAI API Key just like illustrated
+in Step 3) in the Quick Start section below.
+
+Create an `etc/local_custom.toml` (copy of the `etc/local.toml` file) to set additional azure configuration values.
+
+After the Azure API Key and additional configuration values are set, the following command needs to be run to
+perform Human Phenotype Extraction on a text file.
+
+```bash
+python -m ontogpt.cli extract -i path/to/example.txt -t human_phenotype
+```
+
 ## Introduction
 
 _OntoGPT_ is a Python package for extracting structured information from text with large language models (LLMs), _instruction prompts_, and ontology-based grounding.
